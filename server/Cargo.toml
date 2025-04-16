@@ -1,0 +1,30 @@
+[workspace]
+members = [ "application",
+     "command", "configs", "db", "infrastructure", "presentation"]
+resolver = "2"
+
+[workspace.package]
+authors = ["yaozhiwen <y929089994@gmail.com>"]
+edition = "2021"
+license = "Apache-2.0"
+publish = false
+repository = ""
+version = "0.1.0"
+
+[workspace.dependencies]
+axum = "0.8.3"
+axum-extra = { version = "0.10.1", features = ["typed-header"] }
+tokio = { version = "1.44.2", features = ["full"] }
+jsonwebtoken = "9.3"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+
+[profile.release]
+codegen-units = 1 
+debug = false 
+lto = true 
+opt-level = "z" # Optimize for size.
+panic = 'abort' 

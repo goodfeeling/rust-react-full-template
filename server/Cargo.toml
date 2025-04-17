@@ -1,6 +1,6 @@
 [workspace]
 members = [ "application",
-     "command", "configs", "db", "infrastructure", "presentation"]
+     "command", "db", "infrastructure", "presentation", "tools"]
 resolver = "2"
 
 [workspace.package]

@@ -1,0 +1,36 @@
+
+[server]
+name = "axum-admin"
+version = "0.1.0"
+address = "0.0.0.0:3000"
+ssl = false
+content_gzip = true
+cache_time = 600
+cache_method = 1
+api_prefix = "/api"
+
+[web]
+dir = "data/_web"
+index = "index.html"
+upload_dir = "data/_upload"
+upload_url = "/upload"
+[cert]
+cert = "config/cert/cert.pem"
+key = "config/cert/key.pem"
+[casbin]
+model_file = "config/casbin_conf/rbac_model.conf"
+policy_file = "config/casbin_conf/rbac_policy.csv"
+[log]
+dir = "data/log"
+file = "app_log"
+enable_oper_log = true
+log_level = "DEBUG" 
+[system]
+super_user = ["00TV876BOIIDCR9H7JA1KNNIGH", "00TV87DDOBJPU75J4TGUOC3NNG"]
+user_agent_parser = "config/regexes.yaml"
+[jwt]
+jwt_exp = 14400
+jwt_secret = 'secret'
+[database]
+link = 'mysql://root:password@192.168.1.11:13306/db'
+# link = 'postgres://postgres:password@192.168.1.11:15432/db'
